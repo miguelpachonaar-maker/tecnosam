@@ -1,8 +1,9 @@
+//Se importan los estilos necesarios
 import "../estilos/inicio.css"
 
+//Se define el componente de navegación
 const Nav = () => {
   return (
-
     <nav>
       <a href="#Celulares">Celulares</a>
       <a href="#Portátiles">Portátiles</a>
@@ -14,5 +15,4 @@ const Nav = () => {
     </nav>
   )
 }
-
 export default Nav

@@ -1,25 +1,14 @@
 import '../estilos/inicio.css';
 
+//Se define el componente Div que representa un producto individual
 const Div = ()=>{
     return <>
-        <div>
-            <div class="objeto-card" style={{margin: '10px'}}>
-                <h3>Datos del Producto</h3>
-                <div class="campo">
-                    <span>ID del Producto:</span>
-                    <p id="producto-id">001</p>
-                </div>
-                <div class="campo">
-                    <span>Nombre:</span>
-                    <p id="producto-nombre">Laptop Ultraligera</p>
-                </div>
-                <div class="campo">
-                    <span>Precio:</span>
-                    <p id="producto-precio">$1200.00</p>
-                </div>
-                <div class="campo">
-                    <span>En Stock:</span>
-                    <p id="producto-stock">Sí</p>
+        <div style={{marginTop: '60px'}}>
+            <div class="objeto-card" style={{margin: '10px', textAlign: 'center'}}>
+                <h3>Producto</h3>
+                <img src="https://i.blogs.es/69248e/iphone/1366_2000.jpeg" alt="imagen iphone" />
+                <div class="descriocion">
+                    <span>Aquí va una breve descripción del producto con sus especificaciones técnicas, el precio $100.000 e información relevante del equipo</span>
                 </div>
             </div>
         </div>
