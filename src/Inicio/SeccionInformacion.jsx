@@ -1,6 +1,6 @@
 import '../estilos/inicio.css';
 
-const SeccionInicio = ()=>{
+const SeccionInformacion = ()=>{
     return (
         <div class="informacion">
             <h1>Bienvenido a TecnoSam</h1>
@@ -10,8 +10,8 @@ const SeccionInicio = ()=>{
                     En TecnoSam, nos dedicamos a ofrecerte la mejor tecnología al mejor precio.
                 </h3>
             </div>
-            <button type='button'>¡Suscríbete!</button>
+            <button type='button'><p>¡Suscríbete!</p></button>
         </div>
     )
 }
-export default SeccionInicio;
+export default SeccionInformacion;

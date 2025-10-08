@@ -170,6 +170,9 @@ button:hover {
   border-color: crimson;
   transition: 1s;
 }
+button p:hover{
+  color: white;
+}
 
 /*Diseño del pie de página*/
 footer{

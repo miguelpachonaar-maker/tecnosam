@@ -3,8 +3,9 @@ import '../estilos/inicio.css';
 import Nav from "../Nav/Nav.jsx";
 import Div from "../DivProductos/Div.jsx";
 import Carrusel from '../Carruseles/Carrusel.jsx';
-import SeccionInicio from './seccion-inicio.jsx';
+import SeccionInicio from './SeccionInformacion.jsx';
 import Piepagina from '../footer/footer.jsx';
+import SeccionInformacion from './SeccionInformacion.jsx';
 
 //Componente principal de la página de inicio
 const inicio = ()=>{
@@ -30,7 +31,7 @@ const inicio = ()=>{
                 <Div />
             </div>
             <div>
-                <SeccionInicio />
+                <SeccionInformacion />
             </div>
             <Piepagina />
         </body>
