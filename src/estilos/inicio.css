@@ -1,8 +1,7 @@
 /*Define el tipo de letra para todo el documento*/
-*{
+*, button{
   font-family: 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
 }
-
 /*Define el estilo del mensaje promocional de inicios*/
 .inicio {
   font-weight: bold;
@@ -10,7 +9,6 @@
   padding: 20px;
   font-size: 35px;
 }
-
 /*Define el estilo del título de la empresa*/
 .inicio-header {
   color: white;
@@ -21,24 +19,23 @@
   align-items: center;
   justify-content: center;
 }
-
 /*Define el para todo el cuerpo de la página*/
 body {
   margin: 0px;
 }
-
 /*Define el estilo de todas las etiquetas p*/
 p {
   color: black;
   margin: 0px;
 }
-
 /*Define el estilo de todas las etiquetas h2*/
 h2 {
   color: white;
   font-size: 50px;
   margin: 0px;
 }
+
+
 
 /*Define el estilo del menú de navegación*/
 nav {
@@ -50,24 +47,26 @@ nav {
   justify-content: space-around;
   align-items: center;
 }
-
 /*Permite cambiar el estilo del menú y de la etiqueta a cuando el cursor está encima*/
 nav:hover, a:hover {
   color: red;
   transition: 0.4s;
 }
-
 /*Define el estilo de la etiqueta a*/
 a {
   color: white;
   text-decoration: none;
 }
-
 /*Permite cambiar el estilo de la etiqueta a cuando el cursor está encima*/
 a:hover {
   transform: scale(1.2);
 }
 
+
+/*Diseño del DIV de productos*/
+.div-productos {
+  margin: 20px;
+}
 /*Define el estilo de cada una de las cajas de los productos, el texto y las imágenes*/
 .objeto-card {
   width: 200px;
@@ -77,6 +76,10 @@ a:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.202);
   background-color: #f9f9f9;
+}
+.objeto-card:hover {
+  background-color: rgb(145, 121, 121);
+  transition: 0.4s;
 }
 .descripcion {
   margin-bottom: 10px;
@@ -88,6 +91,9 @@ img {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+
+
 
 /*Diseño para el carrusel*/
 .Carrusel-caja {
@@ -138,4 +144,41 @@ img {
   70%, 97%{ transform: translateX(-200vw); }
     
   100%{ transform: translateX(0vw); }
+}
+
+/*Diseños secciones de inicio*/
+.informacion {
+  padding: 10px;
+  background-color: rgb(7, 0, 135);
+  color: white;
+  text-align: center;
+  height: 400px;
+}
+button {
+  background-color: rgb(255, 255, 255);
+  width: 200px;
+  height: 30px;
+  border-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  padding-bottom: 30px;
+}
+button:hover {
+  background-color: crimson;
+  border-color: crimson;
+  transition: 1s;
+}
+
+/*Diseño del pie de página*/
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px, 0px, 10px, 0px;
+}
+footer p{
+  color: white;
+  font-size: 12px;
 }

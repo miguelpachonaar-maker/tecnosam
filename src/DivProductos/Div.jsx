@@ -3,7 +3,7 @@ import '../estilos/inicio.css';
 //Se define el componente Div que representa un producto individual
 const Div = ()=>{
     return <>
-        <div style={{marginTop: '60px'}}>
+        <div class="div-productos">
             <div class="objeto-card" style={{margin: '10px', textAlign: 'center'}}>
                 <h3>Producto</h3>
                 <img src="https://i.blogs.es/69248e/iphone/1366_2000.jpeg" alt="imagen iphone" />
