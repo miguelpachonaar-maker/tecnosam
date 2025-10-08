@@ -43,7 +43,7 @@ h2 {
 /*Define el estilo del menú de navegación*/
 nav {
   min-height: 40px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(7, 0, 135);
   color: white;
   font-size: 20px;
   display: flex;
@@ -89,31 +89,53 @@ img {
   margin-bottom: 10px;
 }
 
-/*Define el estilo del carrusel, el comportamiento y detalles*/
+/*Diseño para el carrusel*/
 .Carrusel-caja {
-  height: 400px;
   width: 100%;
-  border-radius: 10px;
-  display: flex;
-  overflow-x: scroll; /* Permite el desplazamiento horizontal */
-  scroll-snap-type: x mandatory;
+  height: 400px; 
+  margin: 0 auto;
+  overflow-x: scroll;
+  /* **CLAVE 2: Define el comportamiento de Anclaje** */
+  /* x = en el eje horizontal | mandatory = forzar el anclaje */
+  scroll-snap-type: x mandatory; 
 }
-.Carrusel-caja img {
-  height: 400px;
+/*Oculta las barras de deslizamiento*/
+.Carrusel-caja::-webkit-scrollbar {
+  display: none; /*Chrome, Safari, Edge*/
+}
+.Carrusel-caja1 {
+  display: flex; 
+  height: 100%;
+  /*Permite que el ancho crezca según el número de ítems*/
+  width: max-content; 
+}
+.Carrusel-caja2 {
+  /*CLAVE 3: Cada ítem ocupa el 100% del ancho de la vista** */
+  min-width: 100vw; 
+  height: 100%;
+  /*Punto de Anclaje** (Centra la imagen en el borde de la vista) */
+  scroll-snap-align: start;
+  /* Centra la imagen dentro del div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: auto-slide 15s infinite ease; 
+}
+.Carrusel-caja2 img {
   width: 100%;
-  flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
-  object-fit: cover; /* Mantiene la proporción de la imagen y la llena */
-  scroll-snap-align: center;
-  animation: infinite slide 20s alternate ease-in-out;
-} 
-
-@keyframes slide {
-  0% { margin-left: 0; }
-  20% { margin-left: 0; }
-  25% { margin-left: -100%; }
-  45% { margin-left: -100%; }
-  70% { margin-left: -100%; }
-  75% { margin-left: -100%; }
-  85% { margin-left: -100%; }
-  100% { margin-left: -100%; }
+  min-height: 400px;
+  display: block;
+  /* Asegura que la imagen cubra el área sin distorsionarse */
+  object-fit: cover; 
+}
+@keyframes auto-slide {
+  0%, 30%   { transform: translateX(0vw); }
+  
+  33%{ transform: translateX(-100vw); }
+  35%, 65%  { transform: translateX(-100vw); }
+    
+  68%{ transform: translateX(-200vw); }
+  70%, 97%{ transform: translateX(-200vw); }
+    
+  100%{ transform: translateX(0vw); }
 }
