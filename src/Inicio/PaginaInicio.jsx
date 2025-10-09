@@ -1,5 +1,5 @@
 //Se importan los componentes y estilos necesarios
-import '../estilos/Inicio.css';
+import '../Estilos/Inicio.css';
 import MenuNav from "../MenuNav/MenuNav.jsx";
 import DivCelulares from "../DivProductos/DivCelulares.jsx";
 import CarruselMarcas from '../Carruseles/CarruselMarcas.jsx';

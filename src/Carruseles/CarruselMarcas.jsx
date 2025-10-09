@@ -1,4 +1,4 @@
-import '../estilos/Inicio.css';
+import '../Estilos/Inicio.css';
 
 const CarruselMarcas = ()=>{
     return <>

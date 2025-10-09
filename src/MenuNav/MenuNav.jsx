@@ -1,5 +1,5 @@
 //Se importan los estilos necesarios
-import "../estilos/inicio.css"
+import "../Estilos/Inicio.css"
 
 //Se define el componente de navegación
 const MenuNav = () => {

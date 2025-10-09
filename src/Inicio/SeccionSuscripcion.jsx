@@ -1,4 +1,4 @@
-import '../estilos/inicio.css';
+import '../Estilos/Inicio.css';
 
 const SeccionSuscripcion = ()=>{
     return (

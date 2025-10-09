@@ -1,4 +1,4 @@
-import '../estilos/Inicio.css';
+import '../Estilos/Inicio.css';
 
 //Se define el componente Div que representa un producto individual
 const DivCelulares = ()=>{
