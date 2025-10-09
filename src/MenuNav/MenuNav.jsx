@@ -1,17 +1,18 @@
 //Se importan los estilos necesarios
 import "../Estilos/Inicio.css"
+import { Link } from 'react-router-dom';
 
 //Se define el componente de navegación
 const MenuNav = () => {
   return (
     <nav className="MenuNav">
-      <a href="#Celulares">Celulares</a>
-      <a href="#Portátiles">Portátiles</a>
-      <a href="#WorkStation">WorkStation</a>
-      <a href="#Tablets">Tablets</a>
-      <a href="#Televisores">Televisores</a>
-      <a href="#IoT">IoT</a>
-      <a href="#mas">++</a>
+      <Link to="/" class="RutaPagina">Celulares</Link>
+      <Link to ="/Portatiles" class="RutaPagina">Portátiles</Link>
+      <Link to ="/WorkSattion" class="RutaPagina">WorkStation</Link>
+      <Link to ="/Tablets" class="RutaPagina">Tablets</Link>
+      <Link to ="/Televisores" class="RutaPagina">Televisores</Link>
+      <Link to ="/IoT" class="RutaPagina">IoT</Link>
+      <Link to ="/++" class="RutaPagina">++</Link>
     </nav>
   )
 }

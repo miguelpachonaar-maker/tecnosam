@@ -48,17 +48,22 @@ h2 {
   align-items: center;
 }
 /*Permite cambiar el estilo del menú y de la etiqueta a cuando el cursor está encima*/
-.MenuNav:hover, a:hover {
-  color: red;
-  transition: 0.4s;
-}
-/*Define el estilo de la etiqueta a*/
-a {
+.MenuNav:hover {
   color: white;
+  transition: 0.4s;
   text-decoration: none;
 }
+.RutaPagina {
+  color: white;
+  transition: 0.4s;
+  text-decoration: none;
+}
+/*Define el estilo de la etiqueta a*/
+.RutaPagina:hover {
+  color: red;
+}
 /*Permite cambiar el estilo de la etiqueta a cuando el cursor está encima*/
-a:hover {
+.RutaPagina:hover:hover {
   transform: scale(1.2);
 }
 
