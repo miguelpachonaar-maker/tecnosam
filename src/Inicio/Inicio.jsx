@@ -1,40 +1,39 @@
 //Se importan los componentes y estilos necesarios
-import '../estilos/inicio.css';
-import Nav from "../Nav/Nav.jsx";
-import Div from "../DivProductos/Div.jsx";
-import Carrusel from '../Carruseles/Carrusel.jsx';
-import SeccionInicio from './SeccionInformacion.jsx';
-import Piepagina from '../footer/footer.jsx';
-import SeccionInformacion from './SeccionInformacion.jsx';
+import '../estilos/Inicio.css';
+import MenuNav from "../MenuNav/MenuNav.jsx";
+import DivCelulares from "../DivProductos/DivCelulares.jsx";
+import CarruselMarcas from '../Carruseles/CarruselMarcas.jsx';
+import PiePagina from '../footer/footer.jsx';
+import SeccionSuscripcion from './SeccionSuscripcion.jsx';
 
 //Componente principal de la página de inicio
-const inicio = ()=>{
+const PaginaInicio = ()=>{
     return <>
         <header className="inicio-header">
             <h2>Tech-eCommerce</h2>
         </header>
         <body>
-            <Nav />
+            <MenuNav />
             <div className="inicio">
                 <p style={{color: 'crimson'}}>¡Gran promoción en equipos Lenovo!</p>
             </div>
             <div>
-                <Carrusel />
+                <CarruselMarcas />
             </div>
             <div style={{flexWrap: 'wrap', display: 'flex', justifyContent: 'center'}}>
-                <Div />
-                <Div />
-                <Div />
-                <Div />
-                <Div />
-                <Div />
-                <Div />
+                <DivCelulares />
+                <DivCelulares />
+                <DivCelulares />
+                <DivCelulares />
+                <DivCelulares />
+                <DivCelulares />
+                <DivCelulares />
             </div>
             <div>
-                <SeccionInformacion />
+                <SeccionSuscripcion />
             </div>
-            <Piepagina />
+            <PiePagina />
         </body>
     </>
 }
-export default inicio;
+export default PaginaInicio;

@@ -1,7 +1,7 @@
-import '../estilos/inicio.css';
+import '../estilos/Inicio.css';
 
 //Se define el componente Div que representa un producto individual
-const Div = ()=>{
+const DivCelulares = ()=>{
     return <>
         <div class="div-productos">
             <div class="objeto-card" style={{margin: '10px', textAlign: 'center'}}>
@@ -14,4 +14,4 @@ const Div = ()=>{
         </div>
     </>
 }
-export default Div;
+export default DivCelulares;

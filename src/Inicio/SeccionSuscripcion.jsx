@@ -1,8 +1,8 @@
 import '../estilos/inicio.css';
 
-const SeccionInformacion = ()=>{
+const SeccionSuscripcion = ()=>{
     return (
-        <div class="informacion">
+        <div class="SeccionSuscripcion">
             <h1>Bienvenido a TecnoSam</h1>
             <h3>Tu tienda de tecnología de confianza</h3>
             <div style={{padding: '0px, 20px, 0px, 20px'}}>
@@ -14,4 +14,4 @@ const SeccionInformacion = ()=>{
         </div>
     )
 }
-export default SeccionInformacion;
+export default SeccionSuscripcion;

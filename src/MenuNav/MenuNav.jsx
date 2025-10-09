@@ -2,9 +2,9 @@
 import "../estilos/inicio.css"
 
 //Se define el componente de navegación
-const Nav = () => {
+const MenuNav = () => {
   return (
-    <nav>
+    <nav className="MenuNav">
       <a href="#Celulares">Celulares</a>
       <a href="#Portátiles">Portátiles</a>
       <a href="#WorkStation">WorkStation</a>
@@ -15,4 +15,4 @@ const Nav = () => {
     </nav>
   )
 }
-export default Nav
+export default MenuNav
