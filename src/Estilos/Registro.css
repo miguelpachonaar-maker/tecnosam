@@ -21,12 +21,12 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
-    background-color: white;
-    border-top: 5px solid #c2e6fd;
+    background-color: #dad5bc;
+    border-top: 5px solid #0061c2;
 }
 
 .formulario h2{
-    color: #2174d4; 
+    color: #000000; 
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.8em;
@@ -41,7 +41,7 @@ body {
     align-items: center; 
     margin-bottom: 8px;
     font-weight: bold;
-    color: #2174d4;
+    color: #333;
     gap: 10px;
 }
 

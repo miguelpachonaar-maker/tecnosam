@@ -3,8 +3,6 @@ import RootLayout from './Layout/RootLayout.jsx';
 import PaginaInicio from "./Inicio/PaginaInicio.jsx";
 import PaginaPortatiles from "./PaginasAdicionales/PaginaPortatiles.jsx";
 import PaginaWorkStation from "./PaginasAdicionales/PaginaWorkStation.jsx";
-import PaginaTabletas from "./PaginasAdicionales/PaginaTabletas.jsx";
-import PaginaTelevisores from "./PaginasAdicionales/PaginaTelevisores.jsx";
 import Registro from "./Registro/Registro.jsx";
 import Login from "./Login/Login.jsx";
 
@@ -23,13 +21,7 @@ const IndexApp = () => {
         
         {/*Ruta WorkStation */}
             <Route path="WorkStation" element={<PaginaWorkStation />} />
-
-        {/*Ruta Tabletas */}
-            <Route path="Tabletas" element={<PaginaTabletas />} />
-
-        {/*Ruta Televisores */}
-            <Route path="Televisores" element={<PaginaTelevisores />} />
-
+            
         {/*Ruta para el registro*/ }
             <Route path='Registro' element={<Registro />} /> 
 

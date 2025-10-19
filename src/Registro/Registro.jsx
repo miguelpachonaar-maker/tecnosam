@@ -118,6 +118,8 @@ const Registro = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Escriba su Dirección'
+            pattern='[a-zA-ZÁÉÍÓÚáéíóúñÑ 0-9]'
+            title='Ingrese una dirección'
             required
             />
         </label>
