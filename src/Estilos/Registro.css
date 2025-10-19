@@ -21,12 +21,12 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
-    background-color: #dad5bc;
-    border-top: 5px solid #0061c2;
+    background-color: white;
+    border-top: 5px solid #ffb703;
 }
 
 .formulario h2{
-    color: #000000; 
+    color: #8ecae6; 
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.8em;
@@ -41,7 +41,7 @@ body {
     align-items: center; 
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333;
+    color: #8ecae6;
     gap: 10px;
 }
 
@@ -80,8 +80,8 @@ input:focus{
     margin: 0 auto;     
 }
 button:hover {
-  background-color: white;
-  color: #1e3ce6;
+  background-color: red;
+  color: white;
   transition: 0.5s;
 }
 
