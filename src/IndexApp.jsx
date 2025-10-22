@@ -7,6 +7,8 @@ import PaginaTabletas from "./PaginasAdicionales/PaginaTabletas.jsx";
 import PaginaTelevisores from "./PaginasAdicionales/PaginaTelevisores.jsx";
 import Registro from "./Registro/Registro.jsx";
 import Login from "./Login/Login.jsx";
+import PaginaCarrito from './PaginasAdicionales/PaginaCarrito.jsx';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const IndexApp = () => {
     return <>
@@ -29,6 +31,9 @@ const IndexApp = () => {
 
         {/*Ruta Televisores */}
             <Route path="Televisores" element={<PaginaTelevisores />} />
+
+        {/*Ruta Carrito */}
+            <Route path='Carrito' element={<PaginaCarrito />} />
 
         {/*Ruta para el registro*/ }
             <Route path='Registro' element={<Registro />} /> 

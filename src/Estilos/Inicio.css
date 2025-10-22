@@ -39,6 +39,12 @@ h2 {
   margin: 0px;
 }
 
+h4 {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  margin: 0px;
+}
+
 
 
 /*Define el estilo del menú de navegación*/
@@ -188,10 +194,10 @@ img {
   color: crimson;
 }
 button {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(73, 119, 247);
   width: 200px;
   height: 30px;
-  border-color: white;
+  border-color: rgb(255, 255, 255);
   border-radius: 10px;
   font-weight: bold;
   font-size: 20px;
@@ -217,4 +223,69 @@ footer{
 footer p{
   color: white;
   font-size: 12px;
+}
+
+.carrito-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 50vh;
+  background-color: white;
+  padding: 40px 0;
+}
+
+.carrito-header {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.carrito-header i {
+  margin-right: 10px;
+}
+
+.carrito-texto {
+  color: crimson;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carrito-contenedor {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.carrito-vacio {
+  color: #333;
+  font-style: italic;
+  margin: 20px 0;
+}
+.boton-pagar {
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.boton-pagar i {
+  margin-right: 8px;
+}
+
+.boton-pagar:hover {
+  background-color: #0047c1;
+  transform: scale(1.05);
 }
