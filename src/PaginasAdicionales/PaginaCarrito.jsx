@@ -14,7 +14,6 @@ const PaginaCarrito = () => {
           </p>
 
           <div className="carrito-lista">
-            {/* Aquí podrías mapear los productos del carrito más adelante */}
             <p className="carrito-vacio">
               Tu carrito está vacío por ahora.
             </p>
