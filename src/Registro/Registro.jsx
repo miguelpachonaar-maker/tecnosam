@@ -1,6 +1,9 @@
 import '../Estilos/Inicio.css';
 import '../Estilos/Registro.css';
 import {useState} from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const Registro = () => {
 
@@ -14,26 +17,34 @@ const Registro = () => {
     Contraseña: ""
   });
 
+
+const navigate = useNavigate();
+
+  const [mensaje, setMensaje] = useState("");
    /*maneja los cambios de los inputs*/
   const actualizarCampo = (evento) => {
     const {name, value } = evento.target;
     guardarDatos({
-        ...datos, [name]: value,
+        ...datos, 
+        [name]: value,
     })
     
   };
 
 /* maneja el envio de los datos del registro */
-  const enviarFormulario = (evento) => {
+  const enviarFormulario = async (evento) => {
     evento.preventDefault(); // Evita el refresh de la página
-    console.log("Datos Del Formulario");
-    console.log("Usuario", datos.Usuario);
-    console.log("Cedula", datos.Cedula);
-    console.log("Correo", datos.Correo);
-    console.log("Celular", datos.Celular);
-    console.log("Dirección", datos.Direccion);
-    console.log("Contraseña", datos.Contraseña);
-     alert(`Registro exitoso de ${datos.Usuario}`);
+    try{
+    const respuesta = await axios.post("http://localhost:5000/api/usuarios/registro", datos);
+    setMensaje(respuesta.data.mensaje);
+    alert(`${respuesta.data.mensaje}`);
+    alert(`Registro exitoso de ${datos.Usuario}`);
+    const nombreUsuario = datos.Usuario;
+    setTimeout(() => navigate("/Login", { state: { username: nombreUsuario } }), 1000);
+    }catch (error){
+       setMensaje("Error al registrar usuario");
+    }
+    
   };
 
   
@@ -53,7 +64,7 @@ const Registro = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese Usuario'
-            pattern="[A-Z a-z ÁÉÍÓÚáéíóúÑñ] {5, 20}"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\\s]{4,20}"
             title="El usuario debe de contener entre 5 a 20 caracteres, sin números ni caracteres especiales"
             required
             />
@@ -86,7 +97,7 @@ const Registro = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese correo'
-            pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}'
+            
             title='Debe ser un correo valido, ej: pepitoperez@dominio.com'
             required
             />
@@ -102,7 +113,7 @@ const Registro = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese celular'
-            pattern='[0-9]{10,10}'
+            pattern='[0-9]{10}'
             title='Ingrese un número de celular valido'
             required
             />
@@ -132,7 +143,7 @@ const Registro = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese Contraseña'
-            pattern='[a-zA-ZÁÉÍÓÚáéíóúñÑ 0-9 ._-/*$#!@?]{8,}'
+            pattern="[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9._*$#!@?\-]{8,}"
             title='La contraseña no cumple con los parametros: Ingrese una contraseña con al menos 8 caracteres incluyendo números y caracteres especiales (._-/*$#!@?)'
             required
             />

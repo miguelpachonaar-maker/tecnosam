@@ -4,6 +4,7 @@ import '../Estilos/Registro.css';
 /* Importa las funcion de React y la función de navegación de React Router*/
 import {useState} from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   
@@ -14,7 +15,7 @@ const Login = () => {
     Contraseña: ""
   });
 
-  
+  const [ mensaje, setMensaje] = useState("");
   // Función de React Router para redirigir a otras páginas
   const navigate = useNavigate();
 
@@ -24,24 +25,33 @@ const Login = () => {
     const {name, value } = evento.target;
     // Actualiza el estado 'datos' con el nuevo valor sin perder los anteriores
     guardarDatos({
-        ...datos, [name]: value,
+        ...datos, 
+        [name]: value,
     })
     
   };
   
   
   /* maneja el envio de los datos del registro */
-  const enviarFormulario = (evento) => {
+  const enviarFormulario = async (evento) => {
     evento.preventDefault(); // Evita el refresh de la página
-    console.log("Datos Del Formulario");
-    console.log("Usuario", datos.Usuario);
-    console.log("Contraseña", datos.Contraseña);
+    try{
+    const respuesta = await axios.post("http://localhost:5000/api/usuarios/login", datos);
+    setMensaje(respuesta.data.mensaje);
+    alert(`${respuesta.data.mensaje}`);
      // Guarda el nombre de usuario ingresado
      const nombreUsuario = datos.Usuario;
      // Actualiza los estados con el nombre del usuario y marca que está logeado
     alert(`Bienvenido ${datos.Usuario}`);
     // Redirige al usuario a la página principal ("/") después de 1 segundo
     setTimeout(() => navigate("/", { state: { username: nombreUsuario } }), 1000);
+    } catch(error){
+      const msg = error.response?.data?.mensaje || "Error al iniciar sesión";
+      setMensaje(msg);
+     alert(msg);
+    }
+    
+    
   };
 
   
@@ -61,7 +71,7 @@ const Login = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese Usuario'
-            pattern="[A-Z a-z ÁÉÍÓÚáéíóúÑñ] {5, 20}"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]{4,20}"
             title="El usuario debe de contener entre 5 a 20 caracteres, sin números ni caracteres especiales"
             required
             />
@@ -77,7 +87,7 @@ const Login = () => {
             onChange={actualizarCampo}
              /* Manejador de cambios en los inputs */
             placeholder='Ingrese Contraseña'
-            pattern='[a-zA-ZÁÉÍÓÚáéíóúñÑ 0-9 ._-/*$#!@?]{8,}'
+            pattern="[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9._*$#!@?\-]{8,}"
             title='La contraseña no cumple con los parametros: Ingrese una contraseña con al menos 8 caracteres incluyendo números y caracteres especiales (._-/*$#!@?)'
             required
             />
