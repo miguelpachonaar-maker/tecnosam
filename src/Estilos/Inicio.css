@@ -298,3 +298,55 @@ footer p{
   background-color: #0047c1;
   transform: scale(1.05);
 }
+
+.carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.cantidad-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cantidad-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #888;
+}
+
+.cantidad-num {
+  min-width: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.boton-cerrar-sesion {
+  background-color: #0046ad; /* azul corporativo */
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.boton-cerrar-sesion:hover {
+  background-color: #002b75; /* tono más oscuro */
+  transform: scale(1.05);
+}
+
+.boton-cerrar-sesion:active {
+  transform: scale(0.97);
+}

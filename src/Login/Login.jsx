@@ -5,6 +5,7 @@ import '../Estilos/Registro.css';
 import {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Login = () => {
   
@@ -19,6 +20,13 @@ const Login = () => {
   // Función de React Router para redirigir a otras páginas
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    const usuarioID = localStorage.getItem("usuarioID");
+    if (usuarioID){
+      navigate("/", {replace: true});
+    }
+  }, [navigate]);
    /*maneja los cambios de los inputs*/
   const actualizarCampo = (evento) => {
     // Extrae el nombre y valor del input que se está modificando
@@ -37,10 +45,13 @@ const Login = () => {
     evento.preventDefault(); // Evita el refresh de la página
     try{
     const respuesta = await axios.post("http://localhost:5000/api/usuarios/login", datos);
+    const usuario = respuesta.data.usuario;
     setMensaje(respuesta.data.mensaje);
     alert(`${respuesta.data.mensaje}`);
      // Guarda el nombre de usuario ingresado
      const nombreUsuario = datos.Usuario;
+     localStorage.setItem("usuarioID", usuario._id);
+localStorage.setItem("nombreUsuario", usuario.Usuario);
      // Actualiza los estados con el nombre del usuario y marca que está logeado
     alert(`Bienvenido ${datos.Usuario}`);
     // Redirige al usuario a la página principal ("/") después de 1 segundo

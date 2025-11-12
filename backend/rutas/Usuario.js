@@ -51,6 +51,9 @@ router.post("/login", async (req, res) => {
         return res.status(404).json({ mensaje: "Usuario no encontrado"});
       }
 
+console.log("Contraseña ingresada:", Contraseña);
+console.log("Contraseña en BD:", usuarioEncontrado.Contraseña);
+
       const coincide = await bcrypt.compare(Contraseña, usuarioEncontrado.Contraseña);
       if(!coincide){
        return res.status(401).json({mensaje: "Contraseña incorrecta"});

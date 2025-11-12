@@ -3,17 +3,34 @@ import '../Estilos/Inicio.css';
 import DivCelulares from "../DivProductos/DivCelulares.jsx";
 import CarruselMarcas from '../Carruseles/CarruselMarcas.jsx';
 import SeccionSuscripcion from './SeccionSuscripcion.jsx';
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 //Componente principal de la página de inicio
 const PaginaInicio = ()=>{
 
-    const location = useLocation();
-    const { username } = location.state || { username: "Invitado" };
+    const [nombreUsuario, setNombreUsuario] = useState("Invitado");
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        const usuarioID = localStorage.getItem("usuarioID");
+        const nombreGuardado = localStorage.getItem("nombreUsuario");
+
+        if (!usuarioID) {
+            navigate("/login", {replace: true});
+        } else {
+            setNombreUsuario(nombreGuardado || "Invitado");
+        }
+    }, [navigate]);
+
+
+    
 
     return <>
         <div className="inicio">
-            <h1>Bienvenido, {username}</h1>
+            <h1>Bienvenido, {nombreUsuario}</h1>
             <p style={{color: 'crimson'}}>¡Gran promoción en equipos Lenovo!</p>
         </div>
         <div>
